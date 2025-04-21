@@ -4,7 +4,7 @@ Algorithms And Data Structure
 </h1>
 
 <h4 align="center">
-  <p>In this repo you can see some challenges and exercises from EDA Course By Teacher Nelio Alves.</p>
+  <p>In this repo you can see some challenges and exercises from EDA Course created by teacher Nelio Alves.</p>
 </h4>
 
 <h5>
