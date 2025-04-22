@@ -11,6 +11,19 @@ public class InsertionSort {
         System.out.println(Arrays.stream(insertionSort(new int[]{38, 23, 8, -5, 16, 29, 0, 13})).mapToObj(x -> String.valueOf(x)).collect(joining(",")));
     }
 
+    /**
+     * Análise da complexidade de tempo
+     * Ω(N) ⇾ Os elementos já estão ordenados.
+     * Θ(N²) ⇾ Necessário ordenar parte dos elementos.
+     * O(N²) ⇾ Os elementos estão na ordem inversa.
+     *
+     * Análise da complexidade de espaço
+     * O(1) ⇾ A memória não aumenta conforme o tamanho da entrada.
+     * Variáveis só tem seus valores trocados por outros na stack durante o runtime, mas sem adicionar memória.
+     *
+     * Não citei theta nem ômega, pois nesse caso eles tem o mesmo consumo de memória que o Big O.
+     */
+
     public static int[] insertionSort(int[] arr) {
         for (var i = 1; i < arr.length; i++) {
             var aux = arr[i];
