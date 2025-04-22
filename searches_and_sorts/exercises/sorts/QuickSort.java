@@ -11,6 +11,16 @@ public class QuickSort {
         }
     }
 
+    /**
+     * Análise da complexidade de tempo
+     * Ω(NlogN) ⇾ Os elementos já estão ordenados.
+     * Θ(NlogN) ⇾ Necessário ordenar parte dos elementos.
+     * O(N²) ⇾ Os elementos estão na ordem inversa.
+     *
+     * Análise da complexidade de espaço
+     * O(logN) ⇾ No consumo de memória cresce de forma logarítmica conforme a entrada.
+     *
+     */
     public static void quickSort(int[] nums, int left, int right) {
         if (left < right) {
             int pivot = partition(nums, left, right);
