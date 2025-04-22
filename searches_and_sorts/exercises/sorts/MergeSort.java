@@ -11,6 +11,16 @@ public class MergeSort {
         }
     }
 
+    /**
+     * Análise da complexidade de tempo
+     * Ω(NlogN) ⇾ Os elementos já estão ordenados.
+     * Θ(NlogN) ⇾ Necessário ordenar parte dos elementos.
+     * O(NlogN) ⇾ Os elementos estão na ordem inversa.
+     *
+     * Análise da complexidade de espaço
+     * O(N) ⇾ Na hora de mergiar os arrays temos um novo array resultante com o mesmo tamanho da entrada N
+     *
+     */
     public static void mergeSort(int[] nums, int left, int right) {
         if (left < right) {
             int middle = (left + right) / 2;
