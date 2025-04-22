@@ -14,6 +14,9 @@ out
 # BlueJ files
 *.ctxt
 
+# Some gradle trash
+libs.versions.toml
+
 ## Some IDEA module information created by itself
 data-structure-study.iml
 
@@ -33,3 +36,9 @@ data-structure-study.iml
 hs_err_pid*
 replay_pid*
 
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
