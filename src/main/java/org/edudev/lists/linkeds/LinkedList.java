@@ -7,19 +7,22 @@ public class LinkedList<T> {
     private Node<T> head;
     private int size;
 
-    public void addAtEnd(final Node<T> node) {
-        if (head == null) {
+    public void addAtEnd(final T element) {
+        final var node = new Node<>(element);
+
+        var current = head;
+
+        if (current == null) {
             setHead(node);
             return;
         }
 
-        var current = head;
-
-        while (current != null && current.getNext() != null) {
+        while (current.getNext() != null) {
             current = current.getNext();
         }
 
         current.setNext(node);
+        setSize(size + 1);
     }
 
 
@@ -29,6 +32,7 @@ public class LinkedList<T> {
 
     public void setHead(Node<T> head) {
         this.head = head;
+        setSize(size += 1);
     }
 
     public int getSize() {
