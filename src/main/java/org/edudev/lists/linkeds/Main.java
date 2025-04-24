@@ -10,8 +10,9 @@ public class Main {
         firstList.addAtEnd(86);
         firstList.addAtEnd(-2);
         firstList.addAtEnd(16);
+        firstList.addAtStart(0);
 
-        // 20 -> 9 -> 86 -> -2 -> 16 -> NULL
+        // 0 -> 20 -> 9 -> 86 -> -2 -> 16 -> NULL
 
         firstList.print();
 
@@ -24,5 +25,7 @@ public class Main {
 
         var thirdList = new LinkedList<Integer>();
         System.out.println(STR."\n Terceira lista está vazia? \{thirdList.isEmpty()}");
+        thirdList.addAtEnd(10);
+        thirdList.print();
     }
 }

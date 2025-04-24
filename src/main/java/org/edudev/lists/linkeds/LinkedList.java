@@ -7,6 +7,19 @@ public class LinkedList<T> {
     private Node<T> head;
     private int size;
 
+    public void addAtStart(final T element) {
+        var node = new Node<>(element);
+        final var current = head;
+
+        if (current == null) {
+            setHead(node);
+            return;
+        }
+
+        node.setNext(current);
+        setHead(node);
+    }
+
     public void addAtEnd(final T element) {
         final var node = new Node<>(element);
 
