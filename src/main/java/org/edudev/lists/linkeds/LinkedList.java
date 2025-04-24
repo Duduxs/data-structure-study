@@ -38,6 +38,10 @@ public class LinkedList<T> {
         System.out.println(STR."\nSize: \{getSize()}\n");
     }
 
+    public boolean isEmpty() {
+        return head == null;
+    }
+
     public Node<T> getHead() {
         return head;
     }

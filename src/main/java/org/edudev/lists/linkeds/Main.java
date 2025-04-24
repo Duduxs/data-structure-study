@@ -18,5 +18,9 @@ public class Main {
         var secondList = new LinkedList<Integer>();
         secondList.addAtEnd(24);
         secondList.print();
+        System.out.println(secondList.isEmpty());
+
+        var thirdList = new LinkedList<Integer>();
+        System.out.println(STR."\n\{thirdList.isEmpty()}");
     }
 }
