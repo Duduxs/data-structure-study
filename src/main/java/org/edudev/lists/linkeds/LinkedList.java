@@ -25,6 +25,18 @@ public class LinkedList<T> {
         setSize(size + 1);
     }
 
+    public void print() {
+        var currentHead = getHead();
+
+        System.out.print("Elements: [ ");
+        while (currentHead != null) {
+            System.out.print(STR."\{currentHead.getValue()} ");
+            currentHead = currentHead.getNext();
+        }
+        System.out.print("]");
+
+        System.out.println(STR."\nSize: \{getSize()}\n");
+    }
 
     public Node<T> getHead() {
         return head;

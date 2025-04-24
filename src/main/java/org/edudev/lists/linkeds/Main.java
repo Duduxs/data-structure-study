@@ -11,23 +11,12 @@ public class Main {
         firstList.addAtEnd(-2);
         firstList.addAtEnd(16);
 
-        print(firstList);
+        // 20 -> 9 -> 86 -> -2 -> 16 -> NULL
+
+        firstList.print();
 
         var secondList = new LinkedList<Integer>();
         secondList.addAtEnd(24);
-        print(secondList);
-    }
-
-    void print(LinkedList list) {
-        var currentHead = list.getHead();
-
-        System.out.print("Elements: [ ");
-        while (currentHead != null) {
-            System.out.print(STR."\{currentHead.getValue()} ");
-            currentHead = currentHead.getNext();
-        }
-        System.out.print("]");
-        System.out.println(STR."\nSize: \{list.getSize()}\n");
-
+        secondList.print();
     }
 }
