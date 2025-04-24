@@ -9,15 +9,21 @@ public class LinkedList<T> {
 
     public void addAtStart(final T element) {
         var node = new Node<>(element);
-        final var current = head;
 
-        if (current == null) {
+        if (isEmpty()) {
             setHead(node);
             return;
         }
 
-        node.setNext(current);
+        var aux = getHead();
         setHead(node);
+        node.setNext(aux);
+
+        /**
+         * Também poderia ser dessa forma
+         * node.setNext(getHead());
+         * setHead(node);
+         */
     }
 
     public void addAtEnd(final T element) {

@@ -25,7 +25,7 @@ public class Main {
 
         var thirdList = new LinkedList<Integer>();
         System.out.println(STR."\n Terceira lista está vazia? \{thirdList.isEmpty()}");
-        thirdList.addAtEnd(10);
+        thirdList.addAtStart(10);
         thirdList.print();
     }
 }
