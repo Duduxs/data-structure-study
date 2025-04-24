@@ -66,6 +66,23 @@ public class LinkedList<T> {
         setSize(0);
     }
 
+    public T getElementBy(final int index) {
+        return getNodeBy(index).getValue();
+    }
+
+    public Node<T> getNodeBy(final int index) {
+        if (isEmpty()) return null;
+
+        Node<T> current;
+        var j = 0;
+
+        for (current = getHead(); current != null; current = current.getNext(), j++) {
+            if (j == index) break;
+        }
+
+        return current;
+    }
+
     public Node<T> getHead() {
         return head;
     }

@@ -15,6 +15,9 @@ public class Main {
         // 0 -> 20 -> 9 -> 86 -> -2 -> 16 -> NULL
 
         firstList.print();
+        var node = firstList.getNodeBy(1);
+        System.out.println(node.getValue());
+        System.out.println(firstList.getElementBy(4));
 
         var secondList = new LinkedList<Integer>();
         secondList.addAtEnd(24);
