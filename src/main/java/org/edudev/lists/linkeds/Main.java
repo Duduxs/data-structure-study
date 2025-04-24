@@ -1,7 +1,5 @@
 package org.edudev.lists.linkeds;
 
-import org.edudev.lists.Node;
-
 public class Main {
 
     void main() {
