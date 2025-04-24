@@ -18,9 +18,11 @@ public class Main {
         var secondList = new LinkedList<Integer>();
         secondList.addAtEnd(24);
         secondList.print();
-        System.out.println(secondList.isEmpty());
+        System.out.println(STR."\n Segundo lista está vazia? \{secondList.isEmpty()}");
+        secondList.clear();
+        System.out.println(STR."\n Segundo lista está vazia? \{secondList.isEmpty()}");
 
         var thirdList = new LinkedList<Integer>();
-        System.out.println(STR."\n\{thirdList.isEmpty()}");
+        System.out.println(STR."\n Terceira lista está vazia? \{thirdList.isEmpty()}");
     }
 }

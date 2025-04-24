@@ -39,7 +39,12 @@ public class LinkedList<T> {
     }
 
     public boolean isEmpty() {
-        return head == null;
+        return getHead() == null;
+    }
+
+    public void clear() {
+        setHead(null);
+        setSize(0);
     }
 
     public Node<T> getHead() {
