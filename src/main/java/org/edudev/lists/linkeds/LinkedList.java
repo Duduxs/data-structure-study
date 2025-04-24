@@ -67,11 +67,26 @@ public class LinkedList<T> {
     }
 
     public T getElementBy(final int index) {
-        return getNodeBy(index).getValue();
+        var node = getNodeBy(index);
+        return node != null ? node.getValue() : null;
     }
 
     public Node<T> getNodeBy(final int index) {
-        if (isEmpty()) return null;
+        if (index < 0 || index > getSize()) return null;
+
+        var current = getHead();
+        var i = 0;
+
+        while (i != index) {
+            current = current.getNext();
+            i++;
+        }
+
+        return current;
+
+        /*
+        Também poderia ser da forma abaixo
+        if (isEmpty() || index < 0 || index > getSize()) return null;
 
         Node<T> current;
         var j = 0;
@@ -80,7 +95,8 @@ public class LinkedList<T> {
             if (j == index) break;
         }
 
-        return current;
+        return current
+        ;*/
     }
 
     public Node<T> getHead() {
