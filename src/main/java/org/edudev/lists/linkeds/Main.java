@@ -48,6 +48,12 @@ public class Main {
 
         var fourthList = new LinkedList<Integer>();
         fourthList.addAtPosition(4, 0);
+        fourthList.addAtEnd(9);
+        fourthList.addAtEnd(8);
         fourthList.print();
+
+        var x = fourthList.removeAtPosition(1);
+        fourthList.print();
+        System.out.println(x != null ? x.getValue() : null);
     }
 }

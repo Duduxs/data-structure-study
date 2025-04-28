@@ -72,6 +72,27 @@ public class LinkedList<T> {
         setSize(size + 1);
     }
 
+    public Node<T> removeAtPosition(final int index) {
+        if (index == 0) {
+            var current = getHead();
+            var next = current.getNext();
+            this.head = next;
+            setSize(size - 1);
+            return current;
+        }
+
+        var current = getNodeBy(index);
+        var previous = getNodeBy(index - 1);
+
+        if (current == null) return null;
+
+        var next = current.getNext();
+        previous.setNext(next);
+        setSize(size - 1);
+
+        return current;
+    }
+
     public boolean isEmpty() {
         return getHead() == null;
     }
