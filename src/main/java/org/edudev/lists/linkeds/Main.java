@@ -16,8 +16,11 @@ public class Main {
 
         // 0 -> 20 -> 9 ->  40 -> 86 -> -2 -> 16 -> Null
         firstList.addAtPosition(40, 2);
-
         firstList.print();
+        // 0 -> 20 -> 9 ->  40 -> 86 -> -2 -> 16 -> 90 -> Null
+        firstList.addAtPosition(90, 30);
+        firstList.print();
+
         var node = firstList.getNodeBy(1);
         System.out.println(node.getValue());
         System.out.println(firstList.getElementBy(0));

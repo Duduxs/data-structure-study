@@ -13,6 +13,7 @@ public class LinkedList<T> {
 
         if(previousNode == null) {
             addAtEnd(node.getValue());
+            return;
         }
 
         var aux = previousNode.getNext();
