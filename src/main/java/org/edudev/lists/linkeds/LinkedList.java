@@ -86,18 +86,17 @@ public class LinkedList<T> {
         return node != null ? node.getValue() : null;
     }
 
-    public int xpto(T element) {
+    public int indexOf(T element) {
         var current = getHead();
-        if (current == null) return -1;
+        var i = 0;
 
-        var j = 0;
-
-        while (current != null && element != current.getValue()) {
-            j++;
+        while (current != null) {
+            if (element == current.getValue()) return i;
+            i++;
             current = current.getNext();
         }
 
-        return current != null ? j : -1;
+        return -1;
     }
 
     public Node<T> getNodeBy(final int index) {
