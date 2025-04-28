@@ -14,10 +14,10 @@ public class Main {
         firstList.addAtStart(0);
 
 
-        // 0 -> 20 -> 9 ->  40 -> 86 -> -2 -> 16 -> Null
+        // 0 -> 20 -> 40 -> 9 -> 86 -> -2 -> 16 -> Null
         firstList.addAtPosition(40, 2);
         firstList.print();
-        // 0 -> 20 -> 9 ->  40 -> 86 -> -2 -> 16 -> 90 -> Null
+        // 0 -> 20 -> 40 -> 9 -> 86 -> -2 -> 16 -> 90 -> Null
         firstList.addAtPosition(90, 30);
         firstList.print();
 
