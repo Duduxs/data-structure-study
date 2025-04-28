@@ -81,12 +81,7 @@ public class LinkedList<T> {
         setSize(0);
     }
 
-    public T getElementBy(final int index) {
-        var node = getNodeBy(index);
-        return node != null ? node.getValue() : null;
-    }
-
-    public int indexOf(T element) {
+    public int indexOf(final T element) {
         var current = getHead();
         var i = 0;
 
@@ -97,6 +92,15 @@ public class LinkedList<T> {
         }
 
         return -1;
+    }
+
+    public boolean contains(final T element) {
+        return indexOf(element) != -1;
+    }
+
+    public T getElementBy(final int index) {
+        var node = getNodeBy(index);
+        return node != null ? node.getValue() : null;
     }
 
     public Node<T> getNodeBy(final int index) {

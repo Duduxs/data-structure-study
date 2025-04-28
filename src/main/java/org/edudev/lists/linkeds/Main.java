@@ -23,6 +23,8 @@ public class Main {
 
         System.out.println(STR."Posição de 40: \{firstList.indexOf(40)}");
         System.out.println(STR."Posição de 37: \{firstList.indexOf(37)}");
+        System.out.println(STR."Existe o elemento 40: \{firstList.contains(40)}");
+        System.out.println(STR."Existe o elemento 37: \{firstList.contains(37)}");
 
         var node = firstList.getNodeBy(1);
         System.out.println(node.getValue());
