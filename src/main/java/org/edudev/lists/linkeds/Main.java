@@ -5,6 +5,7 @@ public class Main {
     void main() {
         var firstList = new LinkedList<Integer>();
 
+        // 0 -> 20 -> 9 -> 86 -> -2 -> 16 -> NULL
         firstList.addAtEnd(20);
         firstList.addAtEnd(9);
         firstList.addAtEnd(86);
@@ -12,7 +13,9 @@ public class Main {
         firstList.addAtEnd(16);
         firstList.addAtStart(0);
 
-        // 0 -> 20 -> 9 -> 86 -> -2 -> 16 -> NULL
+
+        // 0 -> 20 -> 9 ->  40 -> 86 -> -2 -> 16 -> Null
+        firstList.addAtPosition(40, 2);
 
         firstList.print();
         var node = firstList.getNodeBy(1);
