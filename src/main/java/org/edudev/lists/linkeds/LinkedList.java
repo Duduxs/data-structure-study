@@ -7,11 +7,24 @@ public class LinkedList<T> {
     private Node<T> head;
     private int size;
 
+    public void print() {
+        var currentHead = getHead();
+
+        System.out.print("Elements: [ ");
+        while (currentHead != null) {
+            System.out.print(STR."\{currentHead.getValue()} ");
+            currentHead = currentHead.getNext();
+        }
+        System.out.print("]");
+
+        System.out.println(STR."\nSize: \{getSize()}\n");
+    }
+
     public void addAtPosition(final T element, final int index) {
         var node = new Node<>(element);
         var previousNode = getNodeBy(index - 1);
 
-        if(previousNode == null) {
+        if (previousNode == null) {
             addAtEnd(node.getValue());
             return;
         }
@@ -19,7 +32,7 @@ public class LinkedList<T> {
         var aux = previousNode.getNext();
         previousNode.setNext(node);
         node.setNext(aux);
-        setSize(getSize()+1);
+        setSize(getSize() + 1);
     }
 
     public void addAtStart(final T element) {
@@ -59,19 +72,6 @@ public class LinkedList<T> {
         setSize(size + 1);
     }
 
-    public void print() {
-        var currentHead = getHead();
-
-        System.out.print("Elements: [ ");
-        while (currentHead != null) {
-            System.out.print(STR."\{currentHead.getValue()} ");
-            currentHead = currentHead.getNext();
-        }
-        System.out.print("]");
-
-        System.out.println(STR."\nSize: \{getSize()}\n");
-    }
-
     public boolean isEmpty() {
         return getHead() == null;
     }
@@ -84,6 +84,20 @@ public class LinkedList<T> {
     public T getElementBy(final int index) {
         var node = getNodeBy(index);
         return node != null ? node.getValue() : null;
+    }
+
+    public int xpto(T element) {
+        var current = getHead();
+        if (current == null) return -1;
+
+        var j = 0;
+
+        while (current != null && element != current.getValue()) {
+            j++;
+            current = current.getNext();
+        }
+
+        return current != null ? j : -1;
     }
 
     public Node<T> getNodeBy(final int index) {

@@ -21,6 +21,9 @@ public class Main {
         firstList.addAtPosition(90, 30);
         firstList.print();
 
+        System.out.println(STR."Posição de 40: \{firstList.xpto(40)}");
+        System.out.println(STR."Posição de 37: \{firstList.xpto(37)}");
+
         var node = firstList.getNodeBy(1);
         System.out.println(node.getValue());
         System.out.println(firstList.getElementBy(0));
