@@ -40,5 +40,9 @@ public class Main {
         System.out.println(STR."\n Terceira lista está vazia? \{thirdList.isEmpty()}");
         thirdList.addAtStart(10);
         thirdList.print();
+
+        var fourthList = new LinkedList<Integer>();
+        fourthList.addAtPosition(4, 0);
+        fourthList.print();
     }
 }
