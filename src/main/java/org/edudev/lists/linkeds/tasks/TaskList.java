@@ -1,5 +1,6 @@
 package org.edudev.lists.linkeds.tasks;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.edudev.lists.Node;
 import org.edudev.lists.linkeds.LinkedList;
@@ -35,6 +36,20 @@ public class TaskList {
             return;
         }
         System.out.println(task);
+    }
+
+    public List<Task> getTasksByTag(final String tag) {
+        var current = getTasks().getHead();
+        List<Task> list = new ArrayList<>();
+
+        while (current != null) {
+            if (current.getValue() instanceof Task t && t.getTag().equalsIgnoreCase(tag)) {
+                list.add((Task) current.getValue());
+            }
+            current = current.getNext();
+        }
+
+        return list;
     }
 
     public LinkedList getTasks() {
