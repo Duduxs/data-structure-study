@@ -72,8 +72,39 @@ public class LinkedList<T> {
         setSize(size + 1);
     }
 
-    public Node<T> removeAtPosition(final int index) {
+    public T removeAtPosition(final int index) {
+        if (isEmpty() || getElementBy(index) == null) {
+            return null;
+        }
+
+        T item;
+        Node<T> aux;
+
         if (index == 0) {
+            item = getHead().getValue();
+            this.head = this.head.getNext();
+            setSize(size - 1);
+            return item;
+        }
+
+        if (index == getSize() - 1) {
+            item = getElementBy(index);
+            aux = getNodeBy(index - 1);
+            aux.setNext(null);
+            setSize(size - 1);
+            return item;
+        }
+
+        aux = getNodeBy(index - 1);
+        item = aux.getValue();
+        aux.setNext(aux.getNext().getNext());
+        setSize(size - 1);
+
+        return item;
+
+
+    /* Também poderia ser da forma abaixo
+    if (index == 0) {
             var current = getHead();
             var next = current.getNext();
             this.head = next;
@@ -90,7 +121,7 @@ public class LinkedList<T> {
         previous.setNext(next);
         setSize(size - 1);
 
-        return current;
+        return current;*/
     }
 
     public boolean isEmpty() {
