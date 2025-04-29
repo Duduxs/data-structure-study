@@ -1,5 +1,7 @@
 package org.edudev.lists.linkeds;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.edudev.lists.Node;
 
 public class LinkedList<T> {
@@ -187,6 +189,18 @@ public class LinkedList<T> {
 
         return current
         ;*/
+    }
+
+    public List<Node<T>> toList() {
+        var current = getHead();
+        List<Node<T>> list = new ArrayList<>();
+
+        while (current != null) {
+            list.add(current);
+            current = current.getNext();
+        }
+
+        return list;
     }
 
     public Node<T> getHead() {

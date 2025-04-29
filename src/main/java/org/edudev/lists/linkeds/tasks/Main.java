@@ -11,6 +11,6 @@ public class Main {
         taskList1.add(task1);
         taskList1.add(task2, 0);
 
-        taskList1.getTasks().print();
+        taskList1.show();
     }
 }

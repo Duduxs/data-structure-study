@@ -1,5 +1,7 @@
 package org.edudev.lists.linkeds.tasks;
 
+import java.util.List;
+import org.edudev.lists.Node;
 import org.edudev.lists.linkeds.LinkedList;
 
 public class TaskList {
@@ -23,8 +25,24 @@ public class TaskList {
         getTasks().addAtPosition(task, index);
     }
 
+    public void show() {
+        getTasksAsList().forEach(node -> show(node.getValue()));
+    }
+
+    public void show(final Task task) {
+        if (task == null) {
+            System.out.println("Task not found");
+            return;
+        }
+        System.out.println(task);
+    }
+
     public LinkedList getTasks() {
         return tasks;
+    }
+
+    public List<Node<Task>> getTasksAsList() {
+        return getTasks().toList();
     }
 
 }
