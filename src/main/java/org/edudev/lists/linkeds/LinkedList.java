@@ -124,6 +124,12 @@ public class LinkedList<T> {
         return current;*/
     }
 
+    public boolean remove(final T element) {
+        var index = indexOf(element);
+        var removedElement = removeAtPosition(index);
+        return removedElement != null;
+    }
+
     public boolean isEmpty() {
         return getHead() == null;
     }

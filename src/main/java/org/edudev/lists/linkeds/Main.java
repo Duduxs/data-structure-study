@@ -50,9 +50,14 @@ public class Main {
         fourthList.addAtPosition(4, 0);
         fourthList.addAtEnd(9);
         fourthList.addAtEnd(8);
+        fourthList.addAtEnd(40);
         fourthList.print();
 
-        System.out.println(fourthList.removeAtPosition(1));
+        System.out.println(fourthList.removeAtPosition(0));
+        fourthList.print();
+        System.out.println(fourthList.remove(16));
+        System.out.println(fourthList.remove(40));
+        System.out.println(fourthList.remove(9));
         fourthList.print();
 
     }
