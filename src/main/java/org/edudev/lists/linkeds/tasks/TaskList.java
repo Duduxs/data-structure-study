@@ -26,16 +26,11 @@ public class TaskList {
         getTasks().addAtPosition(task, index);
     }
 
-    public void show() {
-        getTasksAsList().forEach(node -> show(node.getValue()));
-    }
-
-    public void show(final Task task) {
-        if (task == null) {
-            System.out.println("Task not found");
-            return;
-        }
-        System.out.println(task);
+    public boolean remove(int id) {
+        var task = getTaskById(id);
+        if (task == null) return false;
+        getTasks().remove(task);
+        return true;
     }
 
     public List<Task> getTasksByTag(final String tag) {
@@ -63,6 +58,18 @@ public class TaskList {
         }
 
         return null;
+    }
+
+    public void show() {
+        getTasksAsList().forEach(node -> show(node.getValue()));
+    }
+
+    public void show(final Task task) {
+        if (task == null) {
+            System.out.println("Task not found");
+            return;
+        }
+        System.out.println(task);
     }
 
     public LinkedList getTasks() {

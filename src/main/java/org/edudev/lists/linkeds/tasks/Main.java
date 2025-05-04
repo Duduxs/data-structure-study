@@ -33,6 +33,15 @@ public class Main {
 
         System.out.println(STR."Buscando tarefa com id 7: \{taskList1.getTaskById(7)}");
         System.out.println(STR."Buscando tarefa com id 8: \{taskList1.getTaskById(8)}");
+        System.out.println("------------------------------------------------------_");
+        System.out.println("Removendo elementos...");
+        taskList1.remove(8);
+        taskList1.show();
+        System.out.println("------------------------------------------------------_");
+        taskList1.remove(6);
+        taskList1.show();
+
+
 
     }
 }
