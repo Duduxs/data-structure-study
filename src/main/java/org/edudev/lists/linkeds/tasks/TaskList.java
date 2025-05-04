@@ -44,7 +44,7 @@ public class TaskList {
 
         while (current != null) {
             if (current.getValue() instanceof Task t && t.getTag().equalsIgnoreCase(tag)) {
-                list.add((Task) current.getValue());
+                list.add(t);
             }
             current = current.getNext();
         }

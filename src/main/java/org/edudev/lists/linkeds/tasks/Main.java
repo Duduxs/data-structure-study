@@ -22,11 +22,13 @@ public class Main {
         taskList1.add(task6);
         taskList1.add(task7);
         taskList1.show();
+
         System.out.println("------------------------------------------------------_");
         taskList1.getTasksByTag("meeting").forEach(System.out::println);
         System.out.println("------------------------------------------------------_");
         taskList1.getTasksByTag("study").forEach(System.out::println);
         System.out.println("------------------------------------------------------_");
         taskList1.getTasksByTag("jobs").forEach(System.out::println);
+        System.out.println("------------------------------------------------------_");
     }
 }
