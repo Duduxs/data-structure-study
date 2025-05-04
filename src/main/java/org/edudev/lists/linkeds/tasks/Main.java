@@ -30,5 +30,9 @@ public class Main {
         System.out.println("------------------------------------------------------_");
         taskList1.getTasksByTag("jobs").forEach(System.out::println);
         System.out.println("------------------------------------------------------_");
+
+        System.out.println(STR."Buscando tarefa com id 7: \{taskList1.getTaskById(7)}");
+        System.out.println(STR."Buscando tarefa com id 8: \{taskList1.getTaskById(8)}");
+
     }
 }

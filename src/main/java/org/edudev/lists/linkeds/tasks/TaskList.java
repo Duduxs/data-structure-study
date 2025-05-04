@@ -52,6 +52,19 @@ public class TaskList {
         return list;
     }
 
+    public Task getTaskById(final int id) {
+        var current = getTasks().getHead();
+
+        while (current != null) {
+            if (current.getValue() instanceof Task t && t.getId().equals(Integer.valueOf(id))) {
+                return t;
+            }
+            current = current.getNext();
+        }
+
+        return null;
+    }
+
     public LinkedList getTasks() {
         return tasks;
     }
