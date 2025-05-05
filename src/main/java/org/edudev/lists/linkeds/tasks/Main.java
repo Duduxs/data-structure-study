@@ -61,5 +61,14 @@ public class Main {
         taskList1.move(4, 5);
         taskList1.show();
         System.out.println("------------------------------------------------------_");
+
+        System.out.println("------------------------------------------------------_");
+        System.out.println("Lista antes de inverter");
+        taskList1.show();
+        System.out.println("Lista com a inversão");
+        var newList = taskList1.getTasksAsStack();
+        while (!newList.isEmpty()) {
+            System.out.println(newList.pop());
+        }
     }
 }

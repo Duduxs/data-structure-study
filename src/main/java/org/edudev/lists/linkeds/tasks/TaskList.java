@@ -2,6 +2,7 @@ package org.edudev.lists.linkeds.tasks;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 import org.edudev.lists.Node;
 import org.edudev.lists.linkeds.LinkedList;
 import static org.edudev.lists.linkeds.tasks.TaskStatus.COMPLETED;
@@ -92,6 +93,7 @@ public class TaskList {
         }
 
         return null;
+
 /*
     Também poderia ser dessa forma abaixo
         final var task = getTaskById(id);
@@ -115,6 +117,18 @@ public class TaskList {
             return;
         }
         System.out.println(task);
+    }
+
+    public Stack<Task> getTasksAsStack() {
+        var head = getTasks().getHead();
+        Stack<Task> stack = new Stack<>();
+
+        while (head != null) {
+            stack.push((Task) head.getValue());
+            head = head.getNext();
+        }
+
+        return stack;
     }
 
     public LinkedList getTasks() {
