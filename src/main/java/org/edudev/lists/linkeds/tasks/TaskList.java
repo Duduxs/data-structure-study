@@ -78,12 +78,31 @@ public class TaskList {
     }
 
     public Task move(final int id, final int targetIndex) {
+        if (targetIndex < 0 || targetIndex > getTasks().getSize()) {
+            return null;
+        }
+
+        final var taskItem = getTaskById(id);
+        final var sourceIndex = getTasks().indexOf(taskItem);
+
+        if (taskItem != null && sourceIndex != targetIndex) {
+            getTasks().removeAtPosition(sourceIndex);
+            getTasks().addAtPosition(taskItem, targetIndex);
+            return taskItem;
+        }
+
+        return null;
+/*
+    Também poderia ser dessa forma abaixo
         final var task = getTaskById(id);
         final var sourceIndex = getTasks().indexOf(task);
+
         if (task == null || sourceIndex == targetIndex) return null;
+
         getTasks().removeAtPosition(sourceIndex);
         getTasks().addAtPosition(task, targetIndex);
-        return task;
+
+        return task;*/
     }
 
     public void show() {
