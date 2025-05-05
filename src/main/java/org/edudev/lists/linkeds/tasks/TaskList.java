@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.edudev.lists.Node;
 import org.edudev.lists.linkeds.LinkedList;
+import static org.edudev.lists.linkeds.tasks.TaskStatus.COMPLETED;
 
 public class TaskList {
 
@@ -29,8 +30,24 @@ public class TaskList {
     public boolean remove(int id) {
         var task = getTaskById(id);
         if (task == null) return false;
-        getTasks().remove(task);
-        return true;
+        return getTasks().remove(task);
+    }
+
+    public Task setTaskToCompleted(final int id) {
+        final var task = getTaskById(id);
+        if (task == null) return null;
+
+        task.setStatus(COMPLETED);
+        return task;
+    }
+
+    public Task setTaskDataById(final int id, final Task data) {
+        final var task = getTaskById(id);
+        if (task == null) return null;
+        task.setDescription(data.getDescription());
+        task.setStatus(data.getStatus());
+        task.setTag(data.getTag());
+        return task;
     }
 
     public List<Task> getTasksByTag(final String tag) {

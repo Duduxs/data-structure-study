@@ -40,8 +40,15 @@ public class Main {
         System.out.println("------------------------------------------------------_");
         taskList1.remove(6);
         taskList1.show();
-
-
-
+        System.out.println("------------------------------------------------------_");
+        System.out.println("Marcando algumas tasks como concluídas...");
+        System.out.println(STR."Concluído task 7: \{taskList1.setTaskToCompleted(7)}");
+        System.out.println(STR."Concluído task inexistente 8: \{taskList1.setTaskToCompleted(8)}");
+        taskList1.show();
+        System.out.println("------------------------------------------------------_");
+        var taskUpdate = new Task(null, "Reading working article", "job");
+        System.out.println(STR."Atualizando a task 7: \{taskList1.setTaskDataById(7, taskUpdate)}");
+        System.out.println(STR."Atualizando a task inexistente 8: \{taskList1.setTaskDataById(8, taskUpdate)}");
+        taskList1.show();
     }
 }
