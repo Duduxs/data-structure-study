@@ -77,6 +77,15 @@ public class TaskList {
         return null;
     }
 
+    public Task move(final int id, final int targetIndex) {
+        final var task = getTaskById(id);
+        final var sourceIndex = getTasks().indexOf(task);
+        if (task == null || sourceIndex == targetIndex) return null;
+        getTasks().removeAtPosition(sourceIndex);
+        getTasks().addAtPosition(task, targetIndex);
+        return task;
+    }
+
     public void show() {
         getTasksAsList().forEach(node -> show(node.getValue()));
     }

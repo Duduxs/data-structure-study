@@ -50,5 +50,11 @@ public class Main {
         System.out.println(STR."Atualizando a task 7: \{taskList1.setTaskDataById(7, taskUpdate)}");
         System.out.println(STR."Atualizando a task inexistente 8: \{taskList1.setTaskDataById(8, taskUpdate)}");
         taskList1.show();
+        System.out.println("------------------------------------------------------_");
+        System.out.println("Começando a movimentar as tasks");
+        taskList1.show();
+        System.out.println("Movendo task 7 para o índice 1");
+        taskList1.move(7, 1);
+        taskList1.show();
     }
 }
