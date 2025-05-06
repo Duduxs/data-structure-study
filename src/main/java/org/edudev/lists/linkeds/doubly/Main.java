@@ -12,8 +12,6 @@ public class Main {
         list.addAtEnd(16);
         list.addAtEnd(23);
 
-        System.out.println(list.getHead().getValue());
-        System.out.println(list.getTail().getValue());
-
+        list.show();
     }
 }

@@ -1,5 +1,8 @@
 package org.edudev.lists.linkeds.doubly;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DoublyLinkedList<T> {
 
     private NodeDoubly<T> head;
@@ -25,6 +28,26 @@ public class DoublyLinkedList<T> {
         setTail(node);
         setSize(getSize() + 1);
     }
+
+    public List<T> toList() {
+        var current = getHead();
+
+        List<T> data = new ArrayList<>();
+
+        while (current != null) {
+            data.add(current.getValue());
+            current = current.getNext();
+        }
+
+        return data;
+    }
+
+    public void show() {
+        System.out.println("=======");
+        toList().forEach(System.out::println);
+        System.out.println("=======");
+    }
+
 
     public NodeDoubly<T> getHead() {
         return head;
