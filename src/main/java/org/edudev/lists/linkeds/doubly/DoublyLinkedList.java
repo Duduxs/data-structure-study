@@ -48,6 +48,11 @@ public class DoublyLinkedList<T> {
         System.out.println("=======");
     }
 
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
 
     public NodeDoubly<T> getHead() {
         return head;

@@ -13,5 +13,7 @@ public class Main {
         list.addAtEnd(23);
 
         list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+
     }
 }
