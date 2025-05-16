@@ -29,6 +29,22 @@ public class DoublyLinkedList<T> {
         setSize(getSize() + 1);
     }
 
+    public void addAtStart(final T element) {
+        var node = new NodeDoubly<>(element);
+
+        if(isEmpty()) {
+            setHead(node);
+            setTail(node);
+            setSize(getSize() + 1);
+            return;
+        }
+
+        node.setNext(getHead());
+        head.setPrev(node);
+        setHead(node);
+        setSize(getSize() + 1);
+    }
+
     public List<T> toList() {
         var current = getHead();
 

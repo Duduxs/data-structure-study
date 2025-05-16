@@ -14,6 +14,12 @@ public class Main {
 
         list.show();
         System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+        System.out.println();
+
+        list.addAtStart(100);
+
+        list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
 
     }
 }
