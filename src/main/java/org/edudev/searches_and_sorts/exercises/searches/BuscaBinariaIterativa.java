@@ -18,6 +18,10 @@ public class BuscaBinariaIterativa {
      * Ω(1) Ômega de 1 => O elemento procurado está no meio do array
      * Θ(log n) Theta de N => O elemento procurado está em uma posição "qualquer" da lista e precisou dividir algumas vezes a estrutura de dados para encontrá-lo.
      * O(log n) Big O de N => O elemento procurado não existe ou precisou do número máximo de divisões da estrutura de dados para encontrá-lo.
+     *
+     * > > > Análise da complexidade de espaço
+     * 0(1), Θ(1), Ω(1) -> O espaço utilizado não se altera (não cresce ou diminui).
+     * Temos só algumas variáveis que vão ocupar o mesmo espaço de memória, só trocando de valor.
      */
     public static int binarySearch(int[] array, int key) {
         var lowestPosition = 0;
