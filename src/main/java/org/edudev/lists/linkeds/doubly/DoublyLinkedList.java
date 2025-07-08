@@ -19,7 +19,7 @@ public class DoublyLinkedList<T> {
         if (isEmpty()) {
             setHead(node);
             setTail(node);
-            setSize(getSize() + 1);
+            setSize(1);
             return;
         }
 
@@ -35,7 +35,7 @@ public class DoublyLinkedList<T> {
         if(isEmpty()) {
             setHead(node);
             setTail(node);
-            setSize(getSize() + 1);
+            setSize(1);
             return;
         }
 
