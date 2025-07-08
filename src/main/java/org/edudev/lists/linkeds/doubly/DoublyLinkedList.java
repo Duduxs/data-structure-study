@@ -28,6 +28,22 @@ public class DoublyLinkedList<T> {
         return current;
     }
 
+    public int indexOf(final T element) {
+        var current = getHead();
+        var index = 0;
+
+        while (current != null) {
+
+            if (current.getValue().equals(element))
+                return index;
+
+            current = current.getNext();
+            index++;
+        }
+
+        return -1;
+    }
+
     public boolean isEmpty() {
         return head == null;
     }
@@ -51,12 +67,12 @@ public class DoublyLinkedList<T> {
     public void addAtPosition(final int index, final T element) {
         final var currentElement = getNodeBy(index - 1);
 
-        if(index == 0) {
+        if (index == 0) {
             addAtStart(element);
             return;
         }
 
-        if(currentElement == null) {
+        if (currentElement == null) {
             addAtEnd(element);
             return;
         }
