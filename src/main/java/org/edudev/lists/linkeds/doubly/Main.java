@@ -88,5 +88,10 @@ public class Main {
         System.out.println(STR."Tamanho da lista após remover o elemento -2: \{list.getSize()}");
         System.out.println();
 
+        list.reverse();
+        list.show();
+        System.out.println(STR."Tamanho da lista após reverter: \{list.getSize()}");
+        System.out.println();
+
     }
 }

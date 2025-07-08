@@ -84,9 +84,9 @@ public class DoublyLinkedList<T> {
         final var node = new NodeDoubly<>(element);
 
         node.setNext(currentElement.getNext());
-        node.setPrev(currentElement.getPrev());
+        node.setPrev(currentElement);
+        currentElement.getNext().setPrev(node);
         currentElement.setNext(node);
-        currentElement.setPrev(node);
 
         setSize(getSize() + 1);
     }
@@ -168,6 +168,25 @@ public class DoublyLinkedList<T> {
         setTail(tailPrev);
         setSize(getSize() - 1);
         return tail;
+    }
+
+    public void reverse() {
+        final var head = getHead();
+        final var tail = getTail();
+
+        setHead(tail);
+        setTail(head);
+
+        var current = head;
+        NodeDoubly<T> aux;
+
+        while(current != null) {
+            aux = current.getNext();
+            current.setNext(current.getPrev());
+            current.setPrev(aux);
+            current = aux;
+        }
+
     }
 
     public List<T> toList() {
