@@ -32,7 +32,7 @@ public class DoublyLinkedList<T> {
     public void addAtStart(final T element) {
         var node = new NodeDoubly<>(element);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             setHead(node);
             setTail(node);
             setSize(1);
@@ -45,14 +45,21 @@ public class DoublyLinkedList<T> {
         setSize(getSize() + 1);
     }
 
-    public NodeDoubly<T> getNodeBy(final int index) {
+    public T getBy(final int index) {
+        var node = getNodeBy(index);
+        return node != null ? node.getValue() : null;
+    }
 
-        if(index < 0 || index + 1 > getSize()) {
+    public NodeDoubly<T> getNodeBy(final int index) {
+        if (index < 0 || index >= getSize())
             return null;
-        }
 
         var current = getHead();
-        for(var i = 0 ; i < index && current != null ; i++, current = current.getNext()) { }
+// 1 Opção for(var i = 0 ; i < index && current != null ; i++, current = current.getNext()) { }
+
+        for (var i = 0; i < index && current != null; i++) {
+            current = current.getNext();
+        }
 
         return current;
     }
