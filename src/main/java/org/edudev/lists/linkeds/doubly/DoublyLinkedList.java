@@ -44,6 +44,10 @@ public class DoublyLinkedList<T> {
         return -1;
     }
 
+    public boolean contains(final T element) {
+        return indexOf(element) != -1;
+    }
+
     public boolean isEmpty() {
         return head == null;
     }

@@ -38,9 +38,9 @@ public class Main {
         list.show();
         System.out.println(STR."Tamanho da lista: \{list.getSize()}");
 
-        System.out.println(STR."Índice do elemento 99: \{list.indexOf(99)}");
-        System.out.println(STR."Índice do elemento 100: \{list.indexOf(100)}");
-        System.out.println(STR."Índice do elemento 101: \{list.indexOf(101)}");
+        System.out.println(STR."Índice do elemento 99: \{list.indexOf(99)} e existe? \{list.contains(99)}");
+        System.out.println(STR."Índice do elemento 100: \{list.indexOf(100)} e existe? \{list.contains(100)}");
+        System.out.println(STR."Índice do elemento 101: \{list.indexOf(101)} e existe? \{list.contains(101)}");
 
 
 
