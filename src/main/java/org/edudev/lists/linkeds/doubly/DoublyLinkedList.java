@@ -107,6 +107,21 @@ public class DoublyLinkedList<T> {
         setSize(getSize() + 1);
     }
 
+    public NodeDoubly<T> removeAtStart() {
+        final var head = getHead();
+
+        if (head == null || head.getValue() == null) {
+            setHead(null);
+            setTail(null);
+            setSize(0);
+            return null;
+        }
+
+        setHead(head.getNext());
+        setSize(getSize() - 1);
+        return head;
+    }
+
     public List<T> toList() {
         var current = getHead();
 
