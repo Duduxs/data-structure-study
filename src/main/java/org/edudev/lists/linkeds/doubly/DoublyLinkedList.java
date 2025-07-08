@@ -107,6 +107,17 @@ public class DoublyLinkedList<T> {
         setSize(getSize() + 1);
     }
 
+    public boolean remove(final T element) {
+        final var index = indexOf(element);
+
+        if (index != -1) {
+            removeAtPosition(index);
+            return true;
+        }
+
+        return false;
+    }
+
     public NodeDoubly<T> removeAtStart() {
         final var head = getHead();
 
