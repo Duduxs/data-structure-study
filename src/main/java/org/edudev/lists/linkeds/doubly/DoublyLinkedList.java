@@ -9,6 +9,25 @@ public class DoublyLinkedList<T> {
     private NodeDoubly<T> tail;
     private int size;
 
+    public T getBy(final int index) {
+        var node = getNodeBy(index);
+        return node != null ? node.getValue() : null;
+    }
+
+    public NodeDoubly<T> getNodeBy(final int index) {
+        if (index < 0 || index >= getSize())
+            return null;
+
+        var current = getHead();
+// 1 Opção for(var i = 0 ; i < index && current != null ; i++, current = current.getNext()) { }
+
+        for (var i = 0; i < index && current != null; i++) {
+            current = current.getNext();
+        }
+
+        return current;
+    }
+
     public boolean isEmpty() {
         return head == null;
     }
@@ -43,25 +62,6 @@ public class DoublyLinkedList<T> {
         head.setPrev(node);
         setHead(node);
         setSize(getSize() + 1);
-    }
-
-    public T getBy(final int index) {
-        var node = getNodeBy(index);
-        return node != null ? node.getValue() : null;
-    }
-
-    public NodeDoubly<T> getNodeBy(final int index) {
-        if (index < 0 || index >= getSize())
-            return null;
-
-        var current = getHead();
-// 1 Opção for(var i = 0 ; i < index && current != null ; i++, current = current.getNext()) { }
-
-        for (var i = 0; i < index && current != null; i++) {
-            current = current.getNext();
-        }
-
-        return current;
     }
 
     public List<T> toList() {
