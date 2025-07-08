@@ -116,10 +116,28 @@ public class DoublyLinkedList<T> {
             setSize(0);
             return null;
         }
-
-        setHead(head.getNext());
+        final var headNext = head.getNext();
+        headNext.setPrev(null);
+        setHead(headNext);
         setSize(getSize() - 1);
         return head;
+    }
+
+    public NodeDoubly<T> removeAtEnd() {
+        final var tail = getTail();
+
+        if (tail == null || tail.getPrev() == null) {
+            setHead(null);
+            setTail(null);
+            setSize(0);
+            return null;
+        }
+
+        final var tailPrev = tail.getPrev();
+        tailPrev.setNext(null);
+        setTail(tailPrev);
+        setSize(getSize() - 1);
+        return tail;
     }
 
     public List<T> toList() {

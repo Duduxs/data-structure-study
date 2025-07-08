@@ -58,5 +58,10 @@ public class Main {
         System.out.println(STR."Tamanho da lista: \{list.getSize()}");
         System.out.println();
 
+        list.removeAtEnd();
+        list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+        System.out.println();
+
     }
 }
