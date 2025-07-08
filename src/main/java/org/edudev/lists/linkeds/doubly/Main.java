@@ -26,5 +26,19 @@ public class Main {
         System.out.println(STR."Elemento na posição 6: \{list.getBy(6)}");
         System.out.println(STR."Elemento na posição 7: \{list.getNodeBy(7)}");
 
+        list.addAtPosition(2, 50);
+        list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+
+        list.addAtPosition(-1, 99);
+        list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+
+        list.addAtPosition(0, 0);
+        list.show();
+        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+
+
+
     }
 }

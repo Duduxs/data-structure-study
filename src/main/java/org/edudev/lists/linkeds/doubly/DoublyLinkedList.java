@@ -32,22 +32,6 @@ public class DoublyLinkedList<T> {
         return head == null;
     }
 
-    public void addAtEnd(final T element) {
-        var node = new NodeDoubly(element);
-
-        if (isEmpty()) {
-            setHead(node);
-            setTail(node);
-            setSize(1);
-            return;
-        }
-
-        node.setPrev(getTail());
-        getTail().setNext(node);
-        setTail(node);
-        setSize(getSize() + 1);
-    }
-
     public void addAtStart(final T element) {
         var node = new NodeDoubly<>(element);
 
@@ -61,6 +45,45 @@ public class DoublyLinkedList<T> {
         node.setNext(getHead());
         head.setPrev(node);
         setHead(node);
+        setSize(getSize() + 1);
+    }
+
+    public void addAtPosition(final int index, final T element) {
+        final var currentElement = getNodeBy(index - 1);
+
+        if(index == 0) {
+            addAtStart(element);
+            return;
+        }
+
+        if(currentElement == null) {
+            addAtEnd(element);
+            return;
+        }
+
+        final var node = new NodeDoubly<>(element);
+
+        node.setNext(currentElement.getNext());
+        node.setPrev(currentElement.getPrev());
+        currentElement.setNext(node);
+        currentElement.setPrev(node);
+
+        setSize(getSize() + 1);
+    }
+
+    public void addAtEnd(final T element) {
+        var node = new NodeDoubly(element);
+
+        if (isEmpty()) {
+            setHead(node);
+            setTail(node);
+            setSize(1);
+            return;
+        }
+
+        node.setPrev(getTail());
+        getTail().setNext(node);
+        setTail(node);
         setSize(getSize() + 1);
     }
 
