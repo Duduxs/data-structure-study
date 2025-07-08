@@ -123,6 +123,25 @@ public class DoublyLinkedList<T> {
         return head;
     }
 
+    public NodeDoubly<T> removeAtPosition(final int index) {
+        final var currentElement = getNodeBy(index);
+
+        if (index == 0)
+            return removeAtStart();
+        else if (index == getSize() - 1)
+            return removeAtEnd();
+        else if (currentElement == null)
+            return null;
+
+        final var previous = currentElement.getPrev();
+        final var next = currentElement.getNext();
+
+        previous.setNext(next);
+        next.setPrev(previous);
+        setSize(getSize() - 1);
+        return currentElement;
+    }
+
     public NodeDoubly<T> removeAtEnd() {
         final var tail = getTail();
 

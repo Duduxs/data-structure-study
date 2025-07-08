@@ -50,17 +50,37 @@ public class Main {
 
         list.removeAtStart();
         list.show();
-        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+        System.out.println(STR."Tamanho da lista após remover no começo: \{list.getSize()}");
         System.out.println();
 
         list.removeAtStart();
         list.show();
-        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+        System.out.println(STR."Tamanho da lista após remover no começo: \{list.getSize()}");
         System.out.println();
 
         list.removeAtEnd();
         list.show();
-        System.out.println(STR."Tamanho da lista: \{list.getSize()}");
+        System.out.println(STR."Tamanho da lista após remover no final: \{list.getSize()}");
+        System.out.println();
+
+        list.removeAtPosition(3);
+        list.show();
+        System.out.println(STR."Tamanho da lista após remover posição (3): \{list.getSize()}");
+        System.out.println();
+
+        list.removeAtPosition(0);
+        list.show();
+        System.out.println(STR."Tamanho da lista após remover posição (0): \{list.getSize()}");
+        System.out.println();
+
+        list.removeAtPosition(4);
+        list.show();
+        System.out.println(STR."Tamanho da lista após remover posição (4): \{list.getSize()}");
+        System.out.println();
+
+        list.removeAtPosition(4);
+        list.show();
+        System.out.println(STR."Tamanho da lista após remover posição (4): \{list.getSize()}");
         System.out.println();
 
     }
