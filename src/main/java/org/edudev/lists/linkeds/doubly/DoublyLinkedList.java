@@ -45,6 +45,18 @@ public class DoublyLinkedList<T> {
         setSize(getSize() + 1);
     }
 
+    public NodeDoubly<T> getNodeBy(final int index) {
+
+        if(index < 0 || index + 1 > getSize()) {
+            return null;
+        }
+
+        var current = getHead();
+        for(var i = 0 ; i < index && current != null ; i++, current = current.getNext()) { }
+
+        return current;
+    }
+
     public List<T> toList() {
         var current = getHead();
 

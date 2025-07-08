@@ -21,5 +21,10 @@ public class Main {
         list.show();
         System.out.println(STR."Tamanho da lista: \{list.getSize()}");
 
+        System.out.println(STR."Elemento na posição 0: \{list.getNodeBy(0).getValue()}");
+        System.out.println(STR."Elemento na posição -1: \{list.getNodeBy(-1)}");
+        System.out.println(STR."Elemento na posição 6: \{list.getNodeBy(6).getValue()}");
+        System.out.println(STR."Elemento na posição 7: \{list.getNodeBy(7)}");
+
     }
 }
