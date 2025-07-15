@@ -2,6 +2,7 @@ package org.edudev.stacks_and_queues.exercises.stacks;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
 
 public final class ValidParentheses {
 
@@ -17,7 +18,12 @@ public final class ValidParentheses {
         System.out.println(isValid2("(]")); // false
         System.out.println(isValid2("([])")); // true
         System.out.println(isValid2("[")); // false
-
+        System.out.println("------------------");
+        System.out.println(isValid3("()")); // true
+        System.out.println(isValid3("()[]{}")); // true
+        System.out.println(isValid3("(]")); // false
+        System.out.println(isValid3("([])")); // true
+        System.out.println(isValid3("[")); // false
     }
 
     public boolean isValid(final String s) {
@@ -43,7 +49,6 @@ public final class ValidParentheses {
         }
 
         return elements.isEmpty();
-
     }
 
     public boolean isValid2(final String s) {
@@ -58,15 +63,47 @@ public final class ValidParentheses {
                 continue;
             }
 
-            if (elements.isEmpty() || (currentChar == ')' && elements.poll() != '(') ||
-                (currentChar == '}' && elements.poll() != '{') ||
-                (currentChar == ']' && elements.poll() != '[')
+            if (elements.isEmpty() || (currentChar == ')' && elements.pop() != '(') ||
+                (currentChar == '}' && elements.pop() != '{') ||
+                (currentChar == ']' && elements.pop() != '[')
             ) return false;
 
         }
 
         return elements.isEmpty();
 
+    }
+
+    public boolean isValid3(final String s) {
+        Stack<Character> parentheses = new Stack<>();
+
+        for (var i = 0; i < s.length(); i++) {
+            var element = s.charAt(i);
+
+            if (element == '(' || element == '{' || element == '[') {
+                parentheses.push(s.charAt(i));
+            }
+
+            if (parentheses.isEmpty()) {
+                return false;
+            }
+
+            if (element == ')') {
+                if (parentheses.peek().equals('(')) parentheses.pop();
+                else return false;
+            }
+            if (element == '}') {
+                if (parentheses.peek().equals('{')) parentheses.pop();
+                else return false;
+            }
+            if (element == ']') {
+                if (parentheses.peek().equals('[')) parentheses.pop();
+                else return false;
+            }
+
+        }
+
+        return parentheses.isEmpty();
     }
 
 
