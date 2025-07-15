@@ -16,7 +16,7 @@ public final class IsBalanced {
         for (var i = 0; i < value.length(); i++) {
 
             if (value.charAt(i) == '(') {
-                parentheses.add(value.charAt(i));
+                parentheses.push(value.charAt(i));
                 continue;
             }
 
