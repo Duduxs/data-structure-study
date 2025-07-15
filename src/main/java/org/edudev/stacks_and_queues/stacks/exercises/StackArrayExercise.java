@@ -28,7 +28,7 @@ public class StackArrayExercise {
 
         System.out.println();
         while (!stack.isEmpty()) {
-            // LIFO (Last in First Out) O primeiro a entrar é o último a sair
+            // LIFO (Last in First Out) O último a entrar é o primeiro a sair
             // (1) Bob -> (2) Alice -> (3) John -> (4) Maria
             System.out.println(stack.pop());
         }
