@@ -1,4 +1,4 @@
-package org.edudev.stacks_and_queues.exercises.stacks;
+package org.edudev.stacks_and_queues.stacks.exercises;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
