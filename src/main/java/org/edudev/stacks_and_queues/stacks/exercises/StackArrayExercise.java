@@ -23,6 +23,8 @@ public class StackArrayExercise {
         System.out.println(STR."Topo da pilha: \{stack.peek()}");
 
         //stack.push("Charlie ERROR");
+        //stack.clear();
+        //System.out.println(STR."Pilha está vazia? \{stack.isEmpty()}");
 
         System.out.println();
         while (!stack.isEmpty()) {

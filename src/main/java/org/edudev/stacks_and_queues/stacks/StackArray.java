@@ -44,4 +44,8 @@ public final class StackArray {
         return top == -1;
     }
 
+    public void clear() {
+        top = -1;
+    }
+
 }

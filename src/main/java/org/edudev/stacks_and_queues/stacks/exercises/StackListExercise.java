@@ -19,6 +19,10 @@ public class StackListExercise {
         System.out.println(STR."Tamanho da pilha: \{stack.count()}");
         System.out.println(STR."Topo da pilha: \{stack.peek()}");
 
+//        stack.clear();
+//        System.out.println(STR."Pilha está vazia? \{stack.isEmpty()}");
+//        System.out.println(STR."Tamanho da pilha: \{stack.count()}");
+
         System.out.println();
         while (!stack.isEmpty()) {
             // LIFO (Last in First Out) O primeiro a entrar é o último a sair
