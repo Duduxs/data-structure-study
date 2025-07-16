@@ -24,6 +24,12 @@ public final class ValidParentheses {
         System.out.println(isValid3("(]")); // false
         System.out.println(isValid3("([])")); // true
         System.out.println(isValid3("[")); // false
+        System.out.println("------------------");
+        System.out.println(isValid4("()")); // true
+        System.out.println(isValid4("()[]{}")); // true
+        System.out.println(isValid4("(]")); // false
+        System.out.println(isValid4("([])")); // true
+        System.out.println(isValid4("[")); // false
     }
 
     public boolean isValid(final String s) {
@@ -104,6 +110,25 @@ public final class ValidParentheses {
         }
 
         return parentheses.isEmpty();
+    }
+
+    public boolean isValid4(final String s) {
+        Stack<Character> elements = new Stack<>();
+
+        for (var i = 0; i < s.length(); i++) {
+            var element = s.charAt(i);
+
+            switch (s.charAt(i)) {
+                case '(' -> elements.push(')');
+                case '{' -> elements.push('}');
+                case '[' -> elements.push(']');
+                default -> {
+                    if (elements.isEmpty() || !elements.pop().equals(element)) return false;
+                }
+            }
+        }
+
+        return elements.isEmpty();
     }
 
 
