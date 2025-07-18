@@ -1,13 +1,18 @@
 package org.edudev.stacks_and_queues.queues.exercises;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TimeNeededToBuyTickets {
 
     public void main() {
-        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
-        System.out.println(timeRequiredToBuy(new int[]{5,1,1,1}, 0));
+//        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
+//        System.out.println(timeRequiredToBuy(new int[]{5, 1, 1, 1}, 0));
+        System.out.println("----------------------");
+        System.out.println(timeRequiredToBuy2(new int[]{2, 3, 2}, 2));
+        System.out.println(timeRequiredToBuy2(new int[]{5, 1, 1, 1}, 0));
     }
 
     public int timeRequiredToBuy(int[] tickets, int k) {
@@ -36,4 +41,30 @@ public class TimeNeededToBuyTickets {
 
         return count;
     }
+
+    public int timeRequiredToBuy2(int[] tickets, int k) {
+        var i = 0;
+        var count = 0;
+
+        while (true) {
+            if(i == tickets.length) i = 0;
+            var element = tickets[i];
+
+            if (element == 0) {
+                i++;
+                continue;
+            }
+
+            tickets[i++] -= 1;
+            count++;
+
+            if (tickets[k] == 0) {
+                break;
+            }
+
+        }
+
+        return count;
+    }
+
 }
