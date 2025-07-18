@@ -8,12 +8,12 @@ import java.util.Map;
 public class TimeNeededToBuyTickets {
 
     public void main() {
-//        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
-//        System.out.println(timeRequiredToBuy(new int[]{5, 1, 1, 1}, 0));
-//        System.out.println("----------------------");
-//        System.out.println(timeRequiredToBuy2(new int[]{2, 3, 2}, 2));
-//        System.out.println(timeRequiredToBuy2(new int[]{5, 1, 1, 1}, 0));
-//        System.out.println("----------------------");
+        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
+        System.out.println(timeRequiredToBuy(new int[]{5, 1, 1, 1}, 0));
+        System.out.println("----------------------");
+        System.out.println(timeRequiredToBuy2(new int[]{2, 3, 2}, 2));
+        System.out.println(timeRequiredToBuy2(new int[]{5, 1, 1, 1}, 0));
+        System.out.println("----------------------");
         System.out.println(timeRequiredToBuy3(new int[]{2, 3, 2}, 2));
         System.out.println(timeRequiredToBuy3(new int[]{5, 1, 1, 1}, 0));
     }
@@ -80,11 +80,10 @@ public class TimeNeededToBuyTickets {
 
         while (tickets[k] != 0) {
             final var index = queue.pop();
-            var element = tickets[index];
 
-            tickets[index] = --element;
+            tickets[index]--;
 
-            if (element != 0) {
+            if (tickets[index] != 0) {
                 queue.addLast(index);
             }
 
