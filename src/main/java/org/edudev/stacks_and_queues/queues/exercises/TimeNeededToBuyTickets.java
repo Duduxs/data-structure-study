@@ -8,8 +8,8 @@ import java.util.Map;
 public class TimeNeededToBuyTickets {
 
     public void main() {
-//        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
-//        System.out.println(timeRequiredToBuy(new int[]{5, 1, 1, 1}, 0));
+        System.out.println(timeRequiredToBuy(new int[]{2, 3, 2}, 2));
+        System.out.println(timeRequiredToBuy(new int[]{5, 1, 1, 1}, 0));
         System.out.println("----------------------");
         System.out.println(timeRequiredToBuy2(new int[]{2, 3, 2}, 2));
         System.out.println(timeRequiredToBuy2(new int[]{5, 1, 1, 1}, 0));
