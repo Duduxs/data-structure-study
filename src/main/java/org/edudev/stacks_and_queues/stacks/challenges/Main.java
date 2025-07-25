@@ -5,7 +5,7 @@ package org.edudev.stacks_and_queues.stacks.challenges;
  * JDK 22.0.1 (Zulu) + Gradle 8.13 with preview features enabled.
  */
 
-public final class Main {
+final class Main {
 
     void main() {
         System.out.println("--------Cenário 1--------");

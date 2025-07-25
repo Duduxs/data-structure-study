@@ -3,7 +3,7 @@ package org.edudev.stacks_and_queues.stacks.challenges;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public final class Browser {
+final class Browser {
 
     private String currentPage;
     private final Deque<String> backStack = new ArrayDeque<>();
