@@ -1,4 +1,4 @@
-package org.edudev.stacks_and_queues.stacks;
+package org.edudev.stacks;
 
 public final class StackArray {
 

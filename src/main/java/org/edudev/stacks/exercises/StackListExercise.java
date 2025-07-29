@@ -1,6 +1,6 @@
-package org.edudev.stacks_and_queues.stacks.exercises;
+package org.edudev.stacks.exercises;
 
-import org.edudev.stacks_and_queues.stacks.StackList;
+import org.edudev.stacks.StackList;
 
 public class StackListExercise {
 

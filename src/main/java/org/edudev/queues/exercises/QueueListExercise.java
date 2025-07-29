@@ -1,6 +1,6 @@
-package org.edudev.stacks_and_queues.queues.exercises;
+package org.edudev.queues.exercises;
 
-import org.edudev.stacks_and_queues.queues.QueueList;
+import org.edudev.queues.QueueList;
 
 public class QueueListExercise {
 

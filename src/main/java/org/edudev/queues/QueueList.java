@@ -1,4 +1,4 @@
-package org.edudev.stacks_and_queues.queues;
+package org.edudev.queues;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package org.edudev.stacks_and_queues.stacks.exercises;
+package org.edudev.stacks.exercises;
 
-import org.edudev.stacks_and_queues.stacks.StackArray;
+import org.edudev.stacks.StackArray;
 
 public class StackArrayExercise {
 
