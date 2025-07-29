@@ -1,7 +1,6 @@
 package org.edudev.sets.exercises;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -14,8 +13,16 @@ final class Visitantes {
 
             final var mapper = new ObjectMapper();
             List<String> visitors = mapper.readValue(file, List.class);
+            List<String> visitors2 = List.of(
+                    "ana,2024-07-04T21:42:40.353283800Z,https://blog.com/login",
+                    "bob,2024-07-04T21:42:44.571283800Z,https://blog.com/news",
+                    "maria,2024-07-04T21:42:46.394283800Z,https://blog.com/shop",
+                    "ana,2024-07-04T21:42:50.026283800Z,https://blog.com/news"
+
+            );
 
             System.out.println(total(visitors));
+            System.out.println(total(visitors2));
 
         } catch (final IOException e) {
             throw new RuntimeException(e);
