@@ -26,8 +26,8 @@ final class Alunos {
         ))); // Deve ser 7
     }
 
-    public static int studentsCount(List<List<Integer>> courses) {
-        Set<Integer> uniqueStudents = new HashSet<>();
+    public static int studentsCount(final List<List<Integer>> courses) {
+        final Set<Integer> uniqueStudents = new HashSet<>();
 
         for (var i = 0; i < courses.size(); i++) {
             for (var j = 0; j < courses.get(i).size(); j++) {
@@ -38,12 +38,12 @@ final class Alunos {
         return uniqueStudents.size();
     }
 
-    public static int studentsCount2(List<List<Integer>> courses) {
+    public static int studentsCount2(final List<List<Integer>> courses) {
         return courses.stream().flatMap(Collection::stream).collect(toSet()).size();
     }
 
-    public static int studentsCount3(List<List<Integer>> courses) {
-        Set<Integer> uniqueStudents = new HashSet<>();
+    public static int studentsCount3(final List<List<Integer>> courses) {
+        final Set<Integer> uniqueStudents = new HashSet<>();
 
         for (var i = 0; i < courses.size(); i++) {
             uniqueStudents.addAll(courses.get(i));
