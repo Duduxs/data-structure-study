@@ -21,8 +21,9 @@ public class Xpto {
 
         };
 
-        final var result = counting(data);
-        System.out.println(result);
+        System.out.println(counting(data));
+        System.out.println();
+        System.out.println(counting2(data));
     }
 
     public List<String> counting(final String[] votes) {
@@ -48,4 +49,24 @@ public class Xpto {
 
         return result;
     }
+
+    public List<String> counting2(final String[] votes) {
+        final Map<String, Integer> candidatePerVotes = new HashMap<>();
+        final List<String> result = new ArrayList<>();
+
+        for (final String vote : votes) {
+            final var data = vote.split(",");
+            final var name = data[0];
+            final var totalVotes = Integer.valueOf(data[1]);
+
+            candidatePerVotes.merge(name, totalVotes, Integer::sum);
+        }
+
+        for(var entry: candidatePerVotes.entrySet()) {
+            result.add(STR."\"\{entry.getKey()},\{entry.getValue()}\"");
+        }
+
+        return result;
+    }
+
 }
