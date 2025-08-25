@@ -1,6 +1,7 @@
 package org.edudev.maps.exercises;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,8 @@ public class Xpto {
         System.out.println(counting(data));
         System.out.println();
         System.out.println(counting2(data));
+        System.out.println();
+        System.out.println(counting3(data));
     }
 
     public List<String> counting(final String[] votes) {
@@ -43,7 +46,7 @@ public class Xpto {
             }
         }
 
-        for(var entry: candidatePerVotes.entrySet()) {
+        for (var entry : candidatePerVotes.entrySet()) {
             result.add(STR."\"\{entry.getKey()},\{entry.getValue()}\"");
         }
 
@@ -62,11 +65,28 @@ public class Xpto {
             candidatePerVotes.merge(name, totalVotes, Integer::sum);
         }
 
-        for(var entry: candidatePerVotes.entrySet()) {
+        for (var entry : candidatePerVotes.entrySet()) {
             result.add(STR."\"\{entry.getKey()},\{entry.getValue()}\"");
         }
 
         return result;
+    }
+
+    public List<String> counting3(final String[] votes) {
+        final Map<String, Integer> candidatePerVotes = new HashMap<>();
+
+        Arrays.stream(votes)
+                .map(vote -> vote.split(","))
+                .forEach(data -> {
+                    final var name = data[0];
+                    final var totalVotes = Integer.valueOf(data[1]);
+                    candidatePerVotes.merge(name, totalVotes, Integer::sum);
+                });
+
+        return candidatePerVotes.entrySet()
+                .stream()
+                .map(entry -> STR."\"\{entry.getKey()},\{entry.getValue()}\"")
+                .toList();
     }
 
 }
