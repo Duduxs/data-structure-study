@@ -3,10 +3,10 @@ package org.edudev.recursivity.exercises;
 public class FibbonaciComCauda {
 
     public static void main(String[] args) {
-        System.out.println(fibbonaci(0));
-        System.out.println(fibbonaci(1));
-        System.out.println(fibbonaci(45));
-        System.out.println(fibbonaci(6));
+//        System.out.println(fibbonaci(0));
+        System.out.println(fibbonaci(4));
+//        System.out.println(fibbonaci(45));
+//        System.out.println(fibbonaci(6));
     }
 
     public static int fibbonaci(int n) {
