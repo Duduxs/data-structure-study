@@ -38,7 +38,7 @@ public class DatabaseWithoutORM {
     /**
      * Complexidade de espaço: O(n) [Big O], Θ(n) [Theta], Ω(n) [Omêga]
      * Isso se dá, pois em função ao tamanho da entrada (records) eu sempre vou ter no máximo
-     * N departamento e N empregados devido a forma como o banco relacionam volta os dados.
+     * N departamento e N empregados devido a forma como o banco relacional volta os dados (sempre com departamento e sempre com empregados).
      * Logo a complexidade é linear.
      *
      * Complexidade de tempo: O(n log n) [Big O], Θ(n log m) [Theta], Ω(n) [Omêga]
