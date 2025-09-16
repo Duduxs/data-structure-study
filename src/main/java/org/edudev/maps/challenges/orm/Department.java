@@ -19,7 +19,6 @@ public final class Department implements Comparable<Department> {
 
     public void addEmployee(final Employee employee) {
         employees.add(employee);
-        employee.setDepartment(this);
     }
 
     public String getName() {

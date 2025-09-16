@@ -41,19 +41,16 @@ public class DatabaseWithoutORM {
         for (final var record : records) {
             final var csvSplit = record.split(",");
             final var department = new Department(csvSplit);
-            final var employee = new Employee(csvSplit);
 
             if (departmentPerEmployees.containsKey(department)) {
                 final var employees = departmentPerEmployees.get(department);
                 final var departmentToModify = employees.getFirst().getDepartment();
 
-                departmentToModify.addEmployee(employee);
-                employees.add(employee);
+                employees.add(new Employee(csvSplit, departmentToModify));
                 continue;
             }
 
-            department.addEmployee(employee);
-            departmentPerEmployees.put(department, new ArrayList<>(List.of(employee)));
+            departmentPerEmployees.put(department, new ArrayList<>(List.of(new Employee(csvSplit, department))));
         }
 
         return departmentPerEmployees.keySet().stream().toList();

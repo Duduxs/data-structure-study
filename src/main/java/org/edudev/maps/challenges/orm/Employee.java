@@ -8,24 +8,22 @@ public final class Employee {
     private final String name;
     private final Double salary;
 
-    private Department department;
+    private final Department department;
 
-    public Employee(final String[] csv) {
-        this(Long.parseLong(csv[2]), csv[3], Double.parseDouble(csv[4]));
+    public Employee(final String[] csv, final Department department) {
+        this(Long.parseLong(csv[2]), csv[3], Double.parseDouble(csv[4]), department);
     }
 
-    public Employee(final Long id, final String name, final Double salary) {
+    public Employee(final Long id, final String name, final Double salary, final Department department) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.department = department;
+        this.department.addEmployee(this);
     }
 
     public Department getDepartment() {
         return department;
-    }
-
-    public void setDepartment(final Department department) {
-        this.department = department;
     }
 
     @Override
