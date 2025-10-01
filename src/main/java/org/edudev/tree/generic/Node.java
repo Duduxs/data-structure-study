@@ -5,8 +5,8 @@ import java.util.List;
 
 public final class Node<T> implements Position<T> {
 
-    private final Node<T> parent;
-    private final T element;
+    private Node<T> parent;
+    private T element;
     private final List<Node<T>> children = new ArrayList<>();
 
     private Node() {
@@ -23,12 +23,38 @@ public final class Node<T> implements Position<T> {
         this.parent = parent;
     }
 
+    public void addChild(final Node<T> child) {
+        children.add(child);
+        child.parent = this;
+    }
+
+    public void removeChild(final Node<T> child) {
+        children.remove(child);
+        child.parent = null;
+    }
+
     public boolean isLeaf() {
-        return this.children.isEmpty();
+        return children.isEmpty();
     }
 
     @Override
     public T element() {
         return element;
+    }
+
+    public void setElement(final T element) {
+        this.element = element;
+    }
+
+    public Node<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(final Node<T> parent) {
+        this.parent = parent;
+    }
+
+    public List<Node<T>> getChildren() {
+        return children;
     }
 }
