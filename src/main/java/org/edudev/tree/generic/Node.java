@@ -3,7 +3,7 @@ package org.edudev.tree.generic;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Node<T> implements Position<T> {
+final class Node<T> implements Position<T> {
 
     private Node<T> parent;
     private T element;
@@ -21,20 +21,6 @@ public final class Node<T> implements Position<T> {
     public Node(final T element, final Node<T> parent) {
         this.element = element;
         this.parent = parent;
-    }
-
-    public void addChild(final Node<T> child) {
-        children.add(child);
-        child.parent = this;
-    }
-
-    public void removeChild(final Node<T> child) {
-        children.remove(child);
-        child.parent = null;
-    }
-
-    public boolean isLeaf() {
-        return children.isEmpty();
     }
 
     @Override
@@ -56,5 +42,19 @@ public final class Node<T> implements Position<T> {
 
     public List<Node<T>> getChildren() {
         return children;
+    }
+
+    public void addChild(final Node<T> child) {
+        children.add(child);
+        child.parent = this;
+    }
+
+    public void removeChild(final Node<T> child) {
+        children.remove(child);
+        child.parent = null;
+    }
+
+    public boolean isLeaf() {
+        return children.isEmpty();
     }
 }
