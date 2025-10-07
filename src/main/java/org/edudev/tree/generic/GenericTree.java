@@ -1,14 +1,11 @@
 package org.edudev.tree.generic;
 
+import java.util.List;
+
 public final class GenericTree<T> {
 
-    private final Node<T> root;
-    private final int size;
-
-    public GenericTree() {
-        this.root = null;
-        this.size = 0;
-    }
+    private Node<T> root;
+    private int size;
 
     public Position<T> getRoot() {
         return root;
@@ -18,16 +15,36 @@ public final class GenericTree<T> {
         return size;
     }
 
+//    public List<T> getElements() {
+//        return root != null ? root.getChildren().stream().map(Node::element).toList() : List.of();
+//    }
+
+    public Position<T> add(final T element, final Position<T> parent) {
+        final var nodeParent = (Node<T>) parent;
+        final var newNode = new Node<>(element, nodeParent);
+        size += 1;
+
+        if (parent == null) {
+            root = newNode;
+            return root;
+        }
+
+        nodeParent.addChild(newNode);
+        return newNode;
+    }
+
 //    public Position<T> find(final T element) {
 //
-//        var currentElement = root.element();
+//        if (root == null) return null;
 //
-//        while(!currentElement.equals(element)) {
-//            if(root.get)
-//            currentElement = root.getChildren().getFirst().element();
+//        var currentElement = root;
+//
+//        while (!currentElement.equals(element)) {
+//
+//                currentElement = root.getChildren().getFirst().element();
 //        }
 //
-//        return root.element().equals(element) ? root : root.getChildren().stream().filter(child -> child.g)
+//        return currentElement;
 //    }
 
     public boolean isRoot(final Position<T> position) {
