@@ -15,10 +15,10 @@ public final class GenericTree<T> {
         return size;
     }
 
+
 //    public List<T> getElements() {
 //        return root != null ? root.getChildren().stream().map(Node::element).toList() : List.of();
 //    }
-
     public Position<T> add(final T element, final Position<T> parent) {
         final var nodeParent = (Node<T>) parent;
         final var newNode = new Node<>(element, nodeParent);
@@ -31,6 +31,11 @@ public final class GenericTree<T> {
 
         nodeParent.addChild(newNode);
         return newNode;
+    }
+
+    public List<Position<T>> children(final Position<T> position) {
+        final var node = (Node<T>) position;
+        return node.getChildren().stream().map(child -> (Position<T>) child).toList();
     }
 
 //    public Position<T> find(final T element) {

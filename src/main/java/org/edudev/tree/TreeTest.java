@@ -1,6 +1,7 @@
 package org.edudev.tree;
 
 import org.edudev.tree.generic.GenericTree;
+import org.edudev.tree.generic.Position;
 
 public class TreeTest {
 
@@ -12,6 +13,25 @@ public class TreeTest {
         final var cap1 = tree.add("Capítulo 1", root);
         final var cap2 = tree.add("Capítulo 2", root);
 
-        System.out.println(cap2.element());
+        tree.add("Para quem é este livro", introduction);
+        tree.add("Agradecimentos", introduction);
+
+        print(tree);
+    }
+
+    static <T> void print(final GenericTree<T> tree) {
+        if(tree.isEmpty()) return;
+        System.out.println("=== Árvore ===");
+        printRecursive(tree, tree.getRoot());
+        System.out.println("=== Árvore ===");
+    }
+
+    private static <T> void printRecursive(final GenericTree<T> tree, final Position<T> position) {
+        System.out.println(position.element());
+
+        final var children = tree.children(position);
+        if(children.isEmpty()) return;
+
+        children.forEach(child -> printRecursive(tree, child));
     }
 }
