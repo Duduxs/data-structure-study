@@ -1,5 +1,6 @@
 package org.edudev.tree.generic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public final class GenericTree<T> {
@@ -34,8 +35,8 @@ public final class GenericTree<T> {
     }
 
     public List<Position<T>> children(final Position<T> position) {
-        final var node = (Node<T>) validate(position);
-        return node.getChildren().stream().map(child -> (Position<T>) child).toList();
+        final var node = validate(position);
+        return new ArrayList<>(node.getChildren());
     }
 
 //    public Position<T> find(final T element) {
@@ -60,14 +61,14 @@ public final class GenericTree<T> {
         return getSize() == 0;
     }
 
-    private Position<T> validate(final Position<T> position) {
-        if (!(position instanceof Node<T>)) {
+    private Node<T> validate(final Position<T> position) {
+        if (!(position instanceof Node<T> node)) {
             throw new IllegalArgumentException("Invalid position type.");
         }
-        if (((Node<T>) position).getParent().equals(position)) {
+        if (node.getParent().equals(node)) {
             throw new IllegalStateException("Position is no longer in the tree.");
         }
-        return position;
+        return node;
     }
 
 }
