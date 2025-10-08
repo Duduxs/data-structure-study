@@ -21,16 +21,18 @@ public final class GenericTree<T> {
 //        return root != null ? root.getChildren().stream().map(Node::element).toList() : List.of();
 //    }
     public Position<T> add(final T element, final Position<T> parent) {
-        final var nodeParent = (Node<T>) parent;
-        final var newNode = new Node<>(element, nodeParent);
-        size += 1;
-
-        if (parent == null) {
-            root = newNode;
-            return root;
+        if (!isEmpty() && parent == null) {
+            throw new IllegalArgumentException("Parent cannot be null for a non-empty tree.");
         }
 
-        nodeParent.addChild(newNode);
+        final var parentNode = parent != null ? validate(parent) : null;
+        final var newNode = new Node<>(element, parentNode);
+
+        if (parentNode == null) root = newNode;
+        else parentNode.addChild(newNode);
+
+        ++size;
+
         return newNode;
     }
 
@@ -65,7 +67,7 @@ public final class GenericTree<T> {
         if (!(position instanceof Node<T> node)) {
             throw new IllegalArgumentException("Invalid position type.");
         }
-        if (node.getParent().equals(node)) {
+        if (node.getParent() != null && node.getParent().equals(node)) {
             throw new IllegalStateException("Position is no longer in the tree.");
         }
         return node;
