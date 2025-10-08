@@ -30,8 +30,6 @@ public class TreeTest {
         System.out.println(position.element());
 
         final var children = tree.children(position);
-        if(children.isEmpty()) return;
-
         children.forEach(child -> printRecursive(tree, child));
     }
 }
