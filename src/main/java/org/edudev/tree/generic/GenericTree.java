@@ -16,7 +16,7 @@ public final class GenericTree<T> {
     }
 
 
-//    public List<T> getElements() {
+    //    public List<T> getElements() {
 //        return root != null ? root.getChildren().stream().map(Node::element).toList() : List.of();
 //    }
     public Position<T> add(final T element, final Position<T> parent) {
@@ -34,7 +34,7 @@ public final class GenericTree<T> {
     }
 
     public List<Position<T>> children(final Position<T> position) {
-        final var node = (Node<T>) position;
+        final var node = (Node<T>) validate(position);
         return node.getChildren().stream().map(child -> (Position<T>) child).toList();
     }
 
@@ -46,7 +46,7 @@ public final class GenericTree<T> {
 //
 //        while (!currentElement.equals(element)) {
 //
-//                currentElement = root.getChildren().getFirst().element();
+//                  currentElement = root.getChildren().getFirst().element();
 //        }
 //
 //        return currentElement;
@@ -58,6 +58,16 @@ public final class GenericTree<T> {
 
     public boolean isEmpty() {
         return getSize() == 0;
+    }
+
+    private Position<T> validate(final Position<T> position) {
+        if (!(position instanceof Node<T>)) {
+            throw new IllegalArgumentException("Invalid position type.");
+        }
+        if (((Node<T>) position).getParent().equals(position)) {
+            throw new IllegalStateException("Position is no longer in the tree.");
+        }
+        return position;
     }
 
 }
