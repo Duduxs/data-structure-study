@@ -22,14 +22,15 @@ public class TreeTest {
     static <T> void print(final GenericTree<T> tree) {
         if(tree.isEmpty()) return;
         System.out.println("=== Árvore ===");
-        printRecursive(tree, tree.getRoot());
+        printRecursive(tree, tree.getRoot(), 0);
         System.out.println("=== Árvore ===");
     }
 
-    private static <T> void printRecursive(final GenericTree<T> tree, final Position<T> position) {
-        System.out.println(position.element());
+    private static <T> void printRecursive(final GenericTree<T> tree, final Position<T> position, final int depth) {
+        final var spacing = "\t".repeat(depth);
+        System.out.println(spacing + position.element());
 
         final var children = tree.children(position);
-        children.forEach(child -> printRecursive(tree, child));
+        children.forEach(child -> printRecursive(tree, child, depth + 1));
     }
 }
